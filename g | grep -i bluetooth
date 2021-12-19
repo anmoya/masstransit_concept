@@ -1,0 +1,16 @@
+[0;1;32m●[0m bluetooth.service - Bluetooth service
+     Loaded: loaded (/lib/systemd/system/bluetooth.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sun 2021-12-19 09:22:13 -03; 17s ago
+       Docs: man:bluetoothd(8)
+   Main PID: 27453 (bluetoothd)
+     Status: "Running"
+      Tasks: 1 (limit: 37530)
+     Memory: 580.0K
+     CGroup: /system.slice/bluetooth.service
+             └─27453 /usr/lib/bluetooth/bluetoothd
+
+Dec 19 09:22:13 pop-os systemd[1]: Starting Bluetooth service...
+Dec 19 09:22:13 pop-os bluetoothd[27453]: Bluetooth daemon 5.56
+Dec 19 09:22:13 pop-os systemd[1]: Started Bluetooth service.
+Dec 19 09:22:13 pop-os bluetoothd[27453]: Starting SDP server
+Dec 19 09:22:13 pop-os bluetoothd[27453]: Bluetooth management interface 1.21 initialized

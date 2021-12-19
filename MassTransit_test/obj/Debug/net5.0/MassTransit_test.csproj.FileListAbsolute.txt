@@ -39,3 +39,5 @@
 /home/alfonso/RiderProjects/MassTransit_test/MassTransit_test/obj/Debug/net5.0/ref/MassTransit_test.dll
 /home/alfonso/RiderProjects/MassTransit_test/MassTransit_test/obj/Debug/net5.0/MassTransit_test.pdb
 /home/alfonso/RiderProjects/MassTransit_test/MassTransit_test/obj/Debug/net5.0/MassTransit_test.genruntimeconfig.cache
+/home/alfonso/RiderProjects/MassTransit_test/MassTransit_test/bin/Debug/net5.0/MassTransit.AspNetCoreIntegration.dll
+/home/alfonso/RiderProjects/MassTransit_test/MassTransit_test/bin/Debug/net5.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll

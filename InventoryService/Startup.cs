@@ -1,20 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using Model;
 
-namespace MassTransit_test
+namespace InventoryService
 {
     public class Startup
     {
@@ -29,15 +20,21 @@ namespace MassTransit_test
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "MassTransit_test", Version = "v1"});
-            });
-
-            services.AddMassTransit(config => config.UsingRabbitMq(
-                (ctx, cfg) => 
-                    cfg.Host(("amqp://guest:guest@localhost:5672"))
-            ));
+            
+            services.AddMassTransit(config =>
+                {
+                    config.AddConsumer<OrderConsumer>();
+                    
+                    config.UsingRabbitMq((ctx, cfg) =>
+                    {
+                        cfg.Host("amqp://guest:guest@localhost:5672");
+                    cfg.ReceiveEndpoint("order-queue", c 
+                        => c.ConfigureConsumer<OrderConsumer>(ctx));
+                    });
+                    
+                    
+                } 
+            );
 
             services.AddMassTransitHostedService();
         }
@@ -49,7 +46,7 @@ namespace MassTransit_test
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MassTransit_test v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InventoryService v1"));
             }
 
             app.UseHttpsRedirection();
@@ -59,19 +56,8 @@ namespace MassTransit_test
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-
-            /*var bus = Bus.Factory.CreateUsingRabbitMq(config =>
-            {
-                config.Host("amqp://guest:guest@localhost:5672");
-                config.ReceiveEndpoint("temp-queue", c =>
-                {
-                    c.Handler<Order>(ctx => Console.Out.WriteAsync(ctx.Message.Name));
-                });
-            });
-
-            bus.Start();
-
-            bus.Publish(new Order {Name = "test"});*/
         }
     }
+
+    
 }

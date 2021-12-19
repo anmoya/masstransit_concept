@@ -1,0 +1,12 @@
+/home/alfonso/RiderProjects/MassTransit_test/Model/bin/Debug/net5.0/Model.deps.json
+/home/alfonso/RiderProjects/MassTransit_test/Model/bin/Debug/net5.0/Model.dll
+/home/alfonso/RiderProjects/MassTransit_test/Model/bin/Debug/net5.0/ref/Model.dll
+/home/alfonso/RiderProjects/MassTransit_test/Model/bin/Debug/net5.0/Model.pdb
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/Model.csproj.AssemblyReference.cache
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/Model.GeneratedMSBuildEditorConfig.editorconfig
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/Model.AssemblyInfoInputs.cache
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/Model.AssemblyInfo.cs
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/Model.csproj.CoreCompileInputs.cache
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/Model.dll
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/ref/Model.dll
+/home/alfonso/RiderProjects/MassTransit_test/Model/obj/Debug/net5.0/Model.pdb
